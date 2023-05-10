@@ -28,7 +28,7 @@
                     <i class="fa-solid fa-lock"></i>
                     <input type="text" placeholder="password" required>
                 </article>
-                <p>lost password <a href="#">Click here!</a></p>
+                <p id="lost">lost password <a href="#">Click here!</a></p>
             </article>
             <article class="btn">
                 <button type="button" id="signUpBtn">Sign up</button>
@@ -54,6 +54,7 @@
     let signInBtn = document.getElementById("signInBtn");
     let title = document.getElementById("title");
     let FieldName = document.getElementById("FieldName");
+    let lost = document.getElementById("lost");
 
     signInBtn.onclick = function(){
         FieldName.style.maxHeight = "0";
@@ -61,6 +62,7 @@
 
         signUpBtn.classList.add("disable");
         signInBtn.classList.remove("disable");
+        lost.innerHTML = '<p style="display: block;"><a href=\"#\">forgot password?</a></p>';
     }
     signUpBtn.onclick = function(){
         FieldName.style.maxHeight = "60px";
@@ -68,6 +70,8 @@
 
         signInBtn.classList.add("disable");
         signUpBtn.classList.remove("disable");
+        lost.innerHTML = '<p style="display: block;">lost password<a href=\"#\">Click here</a></p>';
+
 }
 </script>
 </body>
